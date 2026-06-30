@@ -51,45 +51,82 @@ input:focus {
 }
 
 /* ===== TABLE ===== */
+/* ===== TABLE NEW GENERATION ===== */
 table {
-  border-collapse: collapse;
+  border-collapse: separate; /* Đổi từ collapse sang separate để tách biệt các ô */
+  border-spacing: 0 12px;    /* Khoảng cách giữa các hàng là 12px, tạo khoảng trống cho các ô */
   width: 100%;
   margin-top: 25px;
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  background: transparent;   /* Để nền bảng trong suốt, lộ rõ các ô bo góc bên trong */
+  box-shadow: none;
 }
 
-th,
-td {
-  padding: 12px 14px;
-  border-bottom: 1px solid var(--border);
+/* Định dạng chung cho cả tiêu đề và ô nội dung */
+th, td {
+  padding: 16px 18px;        /* Tăng padding để ô rộng rãi, dễ nhìn hơn */
+  font-size: 16px;           /* Tăng kích thước chữ tổng thể lên 16px */
+  text-align: left;
+  border: none;              /* Bỏ đường kẻ border mặc định gò bó */
 }
 
+/* Tiêu đề bảng (th) */
 th {
   background: #e8f5e9;
+  color: #2e7d32;
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
+/* Bo góc cho hàng tiêu đề */
+th:first-child { border-radius: 10px 0 0 10px; }
+th:last-child { border-radius: 0 10px 10px 0; }
+
+/* Tạo phong cách "từng ô" biệt lập cho hàng nội dung (tr) */
+tbody tr {
+  background: rgba(255, 255, 255, 0.95); /* Nền trắng trong suốt nhẹ */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Đổ bóng nhẹ dưới mỗi hàng */
+  transition: all 0.25s ease-in-out; /* Tạo hiệu ứng mượt mà khi hover */
+}
+
+/* Bo góc cho các ô rìa của mỗi hàng để tạo khối liền mạch */
+td:first-child { border-radius: 12px 0 0 12px; }
+td:last-child { border-radius: 0 12px 12px 0; }
+
+/* Hiệu ứng Hover - Khi di chuột vào cả hàng sẽ nổi lên */
 tbody tr:hover {
-  background: #f1f8f4;
+  background: #ffffff;
+  transform: translateY(-3px) scale(1.01); /* Nhấc nhẹ hàng lên và phóng to 1% */
+  box-shadow: 0 8px 20px rgba(46, 125, 50, 0.15); /* Đổ bóng màu xanh lá nhẹ */
 }
 
+/* Cột 1 (⭐/STT) */
 td:nth-child(1) {
-  font-weight: 600;
-  color: #1b5e20;
+  font-weight: bold;
+  color: #ffb300; /* Màu vàng nổi bật cho ngôi sao */
+  width: 5%;
+  text-align: center;
 }
 
+/* Cột 2 (Nội dung) */
 td:nth-child(2) {
-  font-style: italic;
+  font-weight: 700;
+  color: #2e7d32; /* Màu xanh chủ đạo */
+  font-size: 18px; /* Cho từ vựng/chữ Hán to hẳn lên */
 }
 
+/* Cột 3 (Cách đọc) */
 td:nth-child(3) {
-  color: #111827;
+  font-style: italic;
+  color: #555555;
 }
 
+/* Cột 4 (Ý nghĩa) */
+td:nth-child(4) {
+  color: #1f2937;
+  font-weight: 500;
+}
 /* ===== QUIZ ===== */
 .quiz-btn {
   background: linear-gradient(135deg, #ff9800, #ff5722);
