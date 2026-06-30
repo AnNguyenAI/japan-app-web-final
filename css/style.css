@@ -127,6 +127,13 @@ td:nth-child(4) {
   color: #1f2937;
   font-weight: 500;
 }
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* ===== QUIZ ===== */
 .quiz-btn {
   background: linear-gradient(135deg, #ff9800, #ff5722);
