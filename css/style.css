@@ -138,14 +138,14 @@ td:nth-child(3) {
   font-style: normal;
   font-weight: 700;             /* Chữ đậm */
   color: #4b5563;               /* Màu xám đậm dễ nhìn */
-  font-size: 20px;              /* Tăng nhẹ kích thước giúp dễ học phát âm */
+  font-size: 30px;              /* Tăng nhẹ kích thước giúp dễ học phát âm */
 }
 
 /* Cột 4 (Ý NGHĨA - Tiếng Việt) */
 td:nth-child(4) {
   color: #1f2937;
   font-weight: 600;             /* Đẩy độ đậm từ 500 lên 600 để đồng bộ với toàn bảng */
-  font-size: 20px;
+  font-size: 30px;
 }
 
 /* ===== QUIZ ===== */
